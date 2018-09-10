@@ -81,29 +81,31 @@ function kickFieldGoal() {
     printCount++;
     printCount++;
     // Append the text to <p>
-    var para = document.createElement("P");                       // Create a <p> node
-    var textAlert = document.createTextNode("Play " + printCount + ". " + possession + " team kicks " + (Math.abs(lineOfScrimmage - 100)) + " yard field goal!" + '\u000a');      // Create a text node
-    para.appendChild(textAlert);
-    document.getElementById("myDIV").appendChild(para);           // Append <p> to <div> with id="myDIV
     if (tPoss === 0) {
         hPoints = hPoints + 3;
-        } else {
+    } else {
         aPoints = aPoints + 3;
-        }
+    }
+    var para = document.createElement("P");                       // Create a <p> node
+    para.id = 'score';
+    var textAlert = document.createTextNode("Play " + printCount + ". " + possession + " team kicks " + (Math.abs(lineOfScrimmage - 100)) + " yard field goal!" + " | Score is now: Home " + hPoints + " Away " + aPoints + '\u000a');      // Create a text node
+    para.appendChild(textAlert);
+    document.getElementById("myDIV").appendChild(para);           // Append <p> to <div> with id="myDIV
 }
 
 function scoreTouchdown() {
     printCount++;
     // Append the text to <p>
-    var para = document.createElement("P");                       // Create a <p> node
-    var textAlert = document.createTextNode("Play " + printCount + ". " + possession + " team scores " + (Math.abs(lineOfScrimmage - 100)) + " yard touchdown!" + '\u000a');      // Create a text node
-    para.appendChild(textAlert);
-    document.getElementById("myDIV").appendChild(para);           // Append <p> to <div> with id="myDIV
     if (tPoss === 0) {
         hPoints = hPoints + 7;
-        } else {
+    } else {
         aPoints = aPoints + 7;
-        }
+    }
+    var para = document.createElement("P");                       // Create a <p> node
+    para.id = 'score';
+    var textAlert = document.createTextNode("Play " + printCount + ". " + possession + " team scores " + (Math.abs(lineOfScrimmage - 100)) + " yard touchdown!" + " | Score is now: Home " + hPoints + " Away " + aPoints + '\u000a');      // Create a text node
+    para.appendChild(textAlert);
+    document.getElementById("myDIV").appendChild(para);           // Append <p> to <div> with id="myDIV
     alignKickoff();
 }
 

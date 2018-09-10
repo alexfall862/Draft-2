@@ -3,6 +3,10 @@ function button1click() {
     alert ("javascript is working");
 }
 
+function refresh() {
+    location.reload();// ("javascript is working");
+}
+
 //Couldn't figure out a better way to have this display than copying and running at the top. Same thing copied on the bottom.
 document.addEventListener('DOMContentLoaded', function() {
                 // This is for monitoring the success of the code, not need in the final file.
